@@ -1,2 +1,2 @@
 # Bash
-bash scripts de exercicios, estudos, e utilidades.. :)
+bash scripts de exercicios, estudos, e utilidades... ;)
