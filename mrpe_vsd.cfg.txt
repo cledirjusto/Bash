@@ -1,0 +1,32 @@
+zookeeper /usr/local/bin/check_monit.sh zookeeper
+zookeeper-status /usr/local/bin/check_monit.sh zookeeper-status
+tca-daemon /usr/local/bin/check_monit.sh tca-daemon
+tca-daemon-status /usr/local/bin/check_monit.sh tca-daemon-status
+rootfs /usr/local/bin/check_monit.sh rootfs
+stats_nohup.out /usr/local/bin/check_monit.sh stats_nohup.out
+are_nohup.out /usr/local/bin/check_monit.sh are_nohup.out
+stats-collector /usr/local/bin/check_monit.sh stats-collector
+stats-collector-status /usr/local/bin/check_monit.sh stats-collector-status
+ntp-status /usr/local/bin/check_monit.sh ntp-status
+mysql /usr/local/bin/check_monit.sh mysql
+mysql-status /usr/local/bin/check_monit.sh mysql-status
+mediator /usr/local/bin/check_monit.sh mediator
+mediator-status /usr/local/bin/check_monit.sh mediator-status
+jboss-console-log /usr/local/bin/check_monit.sh jboss-console-log
+monit-log /usr/local/bin/check_monit.sh monit-log
+mediator-out /usr/local/bin/check_monit.sh mediator-out
+zookeeper-out /usr/local/bin/check_monit.sh zookeeper-out
+vsd-syslog /usr/local/bin/check_monit.sh vsd-syslog
+keyserver-status /usr/local/bin/check_monit.sh keyserver-status
+jboss /usr/local/bin/check_monit.sh jboss
+jboss-status /usr/local/bin/check_monit.sh jboss-status
+elasticsearch-status /usr/local/bin/check_monit.sh elasticsearch-status
+ejbca-status /usr/local/bin/check_monit.sh ejbca-status
+ejabberd /usr/local/bin/check_monit.sh ejabberd
+ejabberd-status /usr/local/bin/check_monit.sh ejabberd-status
+dns-status /usr/local/bin/check_monit.sh dns-status
+mysql-cluster-status /usr/local/bin/check_monit.sh mysql-cluster-status
+ejabberd-cluster-status /usr/local/bin/check_monit.sh ejabberd-cluster-status
+zookeeper-cluster-status /usr/local/bin/check_monit.sh zookeeper-cluster-status
+TIMEZONE_STATUS   /usr/local/bin/check_timezone.sh
+GALERA_CLUSTER   /usr/local/sbin/galera_cluster.sh -u root -p -w 2 -c 1

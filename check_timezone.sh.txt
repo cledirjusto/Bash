@@ -1,0 +1,13 @@
+#!/bin/bash
+
+status=`timedatectl status   | egrep -i '(Time zone|NTP)' | awk -F: '{ print $2 }' |  paste -sd "" -`
+
+#########horario de verão e sem #########################
+#if [ "$status" == ' America/Sao_Paulo (BRST, -0200) yes yes' ]; then
+if [ "$status" == ' America/Sao_Paulo (-02, -0200) yes yes' ] || [ "$status" == ' America/Sao_Paulo (-03, -0300) yes yes' ] || [ "$status" == ' America/Sao_Paulo (BRT, -0300) yes yes' ] || [ "$status" == ' America/Sao_Paulo (BRST, -0200) yes yes' ]; then
+  echo "Timezone - Status ok"
+    exit 0
+else
+    echo "Timezone - Status fail"
+    exit 2
+fi

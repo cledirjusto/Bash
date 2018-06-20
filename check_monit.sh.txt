@@ -1,0 +1,32 @@
+#!/bin/bash
+monit summary 1>/dev/null 2> /tmp/error
+ERROR=$(</tmp/error)
+if [[ $ERROR == 'Status not available -- the monit daemon is not running'  ]] ; then
+ echo "Monit is down"
+ exit 1
+fi
+CHECK=$(monit summary | egrep "'$1'" | awk '{print $3}')
+if [[ $CHECK == 'Does' ]] ; then
+ echo "Service $1 is Down"
+ exit 2
+elif [[ $CHECK == 'Running' ]] ; then
+ echo "Service $1 is Running"
+ exit 0
+elif [[ $CHECK == 'Accessible' ]] ; then
+ echo "Service $1 is ok"
+ exit 0
+
+elif [[ $CHECK == 'Status' ]] ; then
+ echo "Service $1 is ok"
+ exit 0
+
+elif [[ $CHECK == 'Execution' ]] ; then
+ echo "Service $1 is Down"
+ exit 2
+elif [[ $CHECK == 'Not' ]]; then
+ echo "Service $1 Not Monitored"
+ exit 2
+else
+ monit status $1 | grep FAILED | cut -d " " -f 6- | sed -e 's/^[ \t]*//' | sed ':a;N;$!ba;s/\n/ /g'
+ exit 2
+fi
