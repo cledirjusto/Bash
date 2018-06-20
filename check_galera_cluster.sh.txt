@@ -1,7 +1,7 @@
 #!/bin/bash
 PROGNAME=`basename $0`
 VERSION="Version 1.0,"
-AUTHOR="Guillaume CorÈ <g@fridim.org>"
+AUTHOR="Guillaume Cor√© <g@fridim.org>"
 
 ST_OK=0
 ST_WR=1
@@ -45,7 +45,7 @@ port='3306'
 mysqlhost='localhost'
 fcp=0.1
 
-while getopts ìhvu:p:H:P:w:c:f:0î OPTION; do
+while getopts ‚Äúhvu:p:H:P:w:c:f:0‚Äù OPTION; do
   case $OPTION in
     h)
       print_help
